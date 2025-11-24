@@ -90,11 +90,15 @@ nav ul li a:hover, nav ul li a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    background: url('images/hero-background.jpg') no-repeat center center/cover;
+    /* Image is now set by specific classes below */
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
     animation: kenburns 20s ease-out infinite;
     z-index: -2;
 }
 
+/* Overlay Removed for clearer images
 .hero::after, .company-hero::after {
     content: '';
     position: absolute;
@@ -102,11 +106,37 @@ nav ul li a:hover, nav ul li a.active {
     left: 0;
     width: 100%;
     height: 100%;
-    /* UPDATED: Reduced opacity from 0.8 to 0.7 */
     background: linear-gradient(rgba(0, 51, 102, 0.7), rgba(0, 64, 128, 0.7));
     z-index: -1;
 }
+*/
 
+/* Specific Hero Images */
+.hero-home::before {
+    background-image: url('images/hero-home.jpg');
+}
+
+.hero-limpopo::before {
+    background-image: url('images/hero-limpopo.jpg');
+}
+
+.hero-fast::before {
+    background-image: url('images/hero-fast.jpg');
+}
+
+.hero-gas::before {
+    background-image: url('images/hero-gas.jpg');
+}
+
+.hero-transport::before {
+    background-image: url('images/hero-transport.jpg');
+}
+
+.hero-contact::before {
+    background-image: url('images/hero-contact.jpg');
+}
+
+/* Added text shadow to ensure text is readable without the dark overlay */
 .hero-content {
     max-width: 800px;
     margin: 0 auto;
@@ -116,11 +146,13 @@ nav ul li a:hover, nav ul li a.active {
     font-size: 3rem;
     margin-bottom: 1rem;
     font-weight: 700;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 .hero p, .company-hero p {
     font-size: 1.2rem;
     margin-bottom: 2rem;
+    text-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
 }
 
 /* --- BUTTONS --- */
