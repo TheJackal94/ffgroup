@@ -41,4 +41,25 @@ document.addEventListener("DOMContentLoaded", () => {
         // Prevents re-animating the same counter
         counter.removeAttribute('data-target');
     }
+
+    // Gallery Slideshow Logic
+    const slideshowContainers = document.querySelectorAll('.slideshow-container');
+    
+    slideshowContainers.forEach(container => {
+        const slides = container.querySelectorAll('.slide');
+        let currentSlideIndex = 0;
+
+        if (slides.length > 1) {
+            setInterval(() => {
+                // Fade out current slide
+                slides[currentSlideIndex].classList.remove('active');
+                
+                // Move to next slide
+                currentSlideIndex = (currentSlideIndex + 1) % slides.length;
+                
+                // Fade in new slide
+                slides[currentSlideIndex].classList.add('active');
+            }, 4000); // Changes image every 4 seconds
+        }
+    });
 });
